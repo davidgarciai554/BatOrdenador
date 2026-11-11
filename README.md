@@ -26,11 +26,11 @@ para Windows.
 
    ```bash
    mkdir data
-   sudo chown 1000:1000 data
    chmod 700 data
+   sudo chown 1000:1000 data
    ```
 
-   Si te saltas esto, el contenedor arranca y no puede abrir su base de datos.
+   En ese orden: después del `chown` la carpeta ya no es tuya. Si te saltas esto, el contenedor arranca y no puede abrir su base de datos.
 
 3. **Crea tu configuración:**
 
