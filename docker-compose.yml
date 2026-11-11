@@ -1,0 +1,31 @@
+# BatOrdenador: servidor y aplicación web en un solo contenedor.
+#
+# Antes de arrancar: copia `.env.example` a `.env`, rellénalo y prepara la carpeta de datos.
+# Los pasos están en README.md.
+
+services:
+  batordenador:
+    # PENDIENTE: la dirección definitiva de la imagen se fija al publicarla.
+    image: ${BATORDENADOR_IMAGE:-ghcr.io/PENDIENTE/batordenador:latest}
+    container_name: batordenador
+    restart: unless-stopped
+    ports:
+      # Solo en esta máquina. BatOrdenador habla HTTP sin cifrar: quien lo abre al resto de la red
+      # o a internet tiene que ser tu proxy con HTTPS, no este puerto. Si de verdad quieres
+      # probarlo desde otro aparato de casa sin proxy, pon BATORDENADOR_BIND_ADDR=0.0.0.0 en el .env.
+      - "${BATORDENADOR_BIND_ADDR:-127.0.0.1}:4321:4321"
+    env_file:
+      - .env
+    volumes:
+      # Toda tu información vive aquí: la base de datos y las claves de las notificaciones.
+      - ./data:/app/data
+
+    # Lo que sigue limita el daño si alguien encuentra un fallo en la aplicación. No lo quites
+    # para «arreglar» un error de permisos: el arreglo es el chown de README.md.
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,mode=1777,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

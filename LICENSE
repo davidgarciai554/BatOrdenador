@@ -1,0 +1,56 @@
+LICENCIA DE USO DE BATORDENADOR
+
+Copyright (c) 2026, el autor de BatOrdenador. Todos los derechos reservados.
+
+BatOrdenador (el «Programa») es el conjunto formado por la imagen de contenedor, la
+aplicación que esta sirve y los ficheros de este repositorio. El Programa se ofrece ya
+compilado. Su código fuente no forma parte de lo que se entrega.
+
+1. LO QUE PUEDES HACER
+
+   Puedes descargar el Programa, instalarlo en tus propios equipos y usarlo, sin coste,
+   tú y las personas de tu casa o de tu grupo.
+
+   Puedes hacer las copias que necesites para instalarlo y para tus copias de seguridad.
+
+   Puedes adaptar a tu instalación los ficheros de configuración que se entregan para eso
+   («docker-compose.yml» y «.env»).
+
+2. LO QUE NO PUEDES HACER
+
+   No puedes modificar el Programa ni crear obras derivadas de él.
+
+   No puedes descompilarlo, desensamblarlo ni aplicarle ingeniería inversa para obtener
+   o reconstruir su código fuente, salvo en la medida en que una ley que no admita pacto
+   en contrario te lo permita expresamente.
+
+   No puedes redistribuirlo, ni entero ni por partes, ni modificado ni sin modificar.
+   Si quieres que otra persona lo tenga, indícale este repositorio.
+
+   No puedes venderlo, alquilarlo ni ofrecerlo a terceros como servicio.
+
+   No puedes retirar ni alterar este aviso ni los avisos de autoría que el Programa
+   contenga.
+
+3. COMPONENTES DE TERCEROS
+
+   El Programa incluye componentes de terceros que se rigen por sus propias licencias,
+   recogidas en NOTICE.md y dentro de la propia imagen. Nada de lo anterior limita los
+   derechos que esas licencias te dan sobre esos componentes.
+
+4. SIN GARANTÍA
+
+   EL PROGRAMA SE ENTREGA «TAL CUAL», SIN GARANTÍA DE NINGÚN TIPO, EXPRESA NI IMPLÍCITA,
+   INCLUIDAS LAS DE COMERCIABILIDAD, ADECUACIÓN A UN FIN CONCRETO Y AUSENCIA DE
+   INFRACCIÓN. LO USAS BAJO TU PROPIA RESPONSABILIDAD.
+
+   EN NINGÚN CASO EL AUTOR SERÁ RESPONSABLE DE NINGÚN DAÑO, PÉRDIDA DE DATOS O
+   RECLAMACIÓN QUE DERIVE DEL PROGRAMA O DE SU USO, EN LA MEDIDA EN QUE LA LEY LO PERMITA.
+
+5. FIN DE LA LICENCIA
+
+   Esta licencia termina automáticamente si incumples cualquiera de sus condiciones. En
+   ese caso debes dejar de usar el Programa y borrar todas las copias que tengas.
+
+Para cualquier uso que esta licencia no permita hace falta el permiso previo y por
+escrito del autor.
