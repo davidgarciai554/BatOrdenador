@@ -88,7 +88,7 @@ que ya tengas. Hacen falta dos caminos, uno en cada sentido.
 BatOrdenador entra en el **panel** de Hermes con una cuenta suya. En `.env`:
 
 ```
-HERMES_DASHBOARD_URL=http://hermes:43827
+HERMES_DASHBOARD_URL=http://hermes:9119
 HERMES_DASHBOARD_USER=tu-usuario-del-panel
 HERMES_DASHBOARD_PASSWORD=tu-contraseña-del-panel
 ```
