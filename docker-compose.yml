@@ -5,8 +5,7 @@
 
 services:
   batordenador:
-    # PENDIENTE: la dirección definitiva de la imagen se fija al publicarla.
-    image: ${BATORDENADOR_IMAGE:-ghcr.io/PENDIENTE/batordenador:latest}
+    image: ghcr.io/davidgarciai554/batordenador:latest
     container_name: batordenador
     restart: unless-stopped
     ports:
