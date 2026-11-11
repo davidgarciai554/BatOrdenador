@@ -30,7 +30,11 @@ para Windows.
    sudo chown 1000:1000 data
    ```
 
-   En ese orden: después del `chown` la carpeta ya no es tuya. Si te saltas esto, el contenedor arranca y no puede abrir su base de datos.
+   En ese orden: después del `chown` la carpeta ya no es tuya. Si te saltas esto, el contenedor
+   arranca y no puede abrir su base de datos.
+
+   En **Windows y macOS** con Docker Desktop basta con crear la carpeta (`mkdir data`): los
+   permisos los gestiona Docker.
 
 3. **Crea tu configuración:**
 
@@ -47,14 +51,14 @@ para Windows.
 
    ```bash
    docker compose up -d
-   docker compose logs
    ```
 
-   En el registro tiene que aparecer `Creado el administrador`. Si la contraseña es demasiado
-   floja, ahí verás por qué se ha rechazado: corrígela en `.env` y repite
-   `docker compose up -d --force-recreate`.
-
 5. **Entra** en la dirección que pusiste en `ALLOWED_ORIGINS` con tu usuario y tu contraseña.
+
+   Tu cuenta se crea al abrir la aplicación por primera vez, no antes. Si no te deja entrar, mira
+   el registro con `docker compose logs`: tiene que decir `Creado el administrador`. Si la
+   contraseña era demasiado floja, ahí verás por qué se ha rechazado; corrígela en `.env` y repite
+   `docker compose up -d --force-recreate`.
 
 6. **Cambia la contraseña** desde la app y **borra** de `.env` las dos líneas
    `BATORDENADOR_ADMIN_*`. Ya no hacen nada, pero no hay motivo para dejar una contraseña escrita.
@@ -85,7 +89,18 @@ que ya tengas. Hacen falta dos caminos, uno en cada sentido.
 
 ### 1. De BatOrdenador a Hermes
 
-BatOrdenador entra en el **panel** de Hermes con una cuenta suya. En `.env`:
+BatOrdenador entra en el **panel** de Hermes con una cuenta suya. El panel tiene que estar
+encendido y con usuario y contraseña; en la imagen oficial de Hermes eso son estas variables de
+**su** contenedor (no del de BatOrdenador):
+
+```
+HERMES_DASHBOARD=1
+HERMES_DASHBOARD_BASIC_AUTH_USERNAME=tu-usuario-del-panel
+HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=tu-contraseña-del-panel
+HERMES_DASHBOARD_BASIC_AUTH_SECRET=una-cadena-larga-y-aleatoria
+```
+
+Y en el `.env` de BatOrdenador, la dirección de ese panel y la misma cuenta:
 
 ```
 HERMES_DASHBOARD_URL=http://hermes:9119
